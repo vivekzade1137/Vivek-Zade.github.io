@@ -1,0 +1,229 @@
+/* --- CSS Resets and Global Styles --- */
+:root {
+    --primary-color: #00bcd4; /* A tech-y cyan/blue */
+    --background-color: #121212; /* Deep dark background */
+    --text-color: #e0e0e0; /* Light text for contrast */
+    --secondary-bg: #1e1e1e; /* Slightly lighter dark for cards/sections */
+    --shadow-color: rgba(0, 0, 0, 0.5);
+    --font-stack: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-stack);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #4dd0e1; /* Lighter shade on hover */
+}
+
+/* --- Layout Container --- */
+.section {
+    padding: 80px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h1 { font-size: 3em; color: var(--primary-color); margin-bottom: 0.5em; }
+h2 { font-size: 2em; margin-bottom: 1.5em; border-bottom: 2px solid var(--primary-color); display: inline-block; padding-bottom: 5px; }
+h3 { margin-bottom: 10px; color: var(--primary-color); }
+p { margin-bottom: 1em; }
+
+/* --- Header / Navigation --- */
+.header {
+    background-color: var(--secondary-bg);
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px var(--shadow-color);
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+nav a {
+    margin-left: 20px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+/* --- Hero Section --- */
+.hero {
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 80px 5%;
+    background: linear-gradient(135deg, var(--background-color) 0%, var(--secondary-bg) 100%);
+}
+
+.hero h1 {
+    font-size: 4.5em;
+    margin-bottom: 10px;
+}
+
+.hero h2 {
+    font-size: 2em;
+    color: var(--text-color);
+    margin-bottom: 20px;
+    border: none;
+}
+
+.tagline {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    color: #bdbdbd;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+}
+
+.btn:hover {
+    background-color: #4dd0e1;
+    color: var(--background-color);
+}
+
+.social-links {
+    margin-top: 30px;
+}
+
+.social-links a {
+    font-size: 1.8em;
+    margin: 0 15px;
+    color: var(--text-color);
+}
+
+/* --- About Section --- */
+.about-grid {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    text-align: left;
+}
+
+.profile-photo {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid var(--primary-color);
+    box-shadow: 0 0 20px var(--shadow-color);
+}
+
+/* --- Skills Section --- */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    text-align: left;
+}
+
+.skill-card {
+    background-color: var(--secondary-bg);
+    padding: 25px;
+    border-radius: 8px;
+    border-left: 4px solid var(--primary-color);
+    box-shadow: 0 5px 15px var(--shadow-color);
+}
+
+/* --- Projects Section --- */
+.project-card {
+    background-color: var(--secondary-bg);
+    padding: 30px;
+    margin: 20px auto;
+    border-radius: 8px;
+    max-width: 800px;
+    text-align: left;
+    transition: transform 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px var(--shadow-color);
+}
+
+.project-link {
+    font-weight: bold;
+    margin-right: 15px;
+}
+
+/* --- Contact Section --- */
+.contact-info {
+    margin-top: 30px;
+}
+
+.contact-info p {
+    font-size: 1.1em;
+}
+
+.contact-info i {
+    color: var(--primary-color);
+    margin-right: 10px;
+}
+
+/* --- Footer --- */
+footer {
+    background-color: var(--secondary-bg);
+    padding: 20px;
+    text-align: center;
+    font-size: 0.9em;
+    border-top: 1px solid #333;
+}
+
+/* --- Mobile Responsiveness (For smaller screens) --- */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+    }
+
+    nav a {
+        margin: 10px 10px;
+        display: inline-block;
+    }
+
+    .hero h1 {
+        font-size: 3em;
+    }
+
+    .about-grid {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-photo {
+        margin-bottom: 20px;
+    }
+}
